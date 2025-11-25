@@ -19,6 +19,15 @@ class Snake:
             self.add_segment(position)
 
 
+    def reset(self):
+        for seg in self.snake_body:
+            seg.goto(1000, 1000)
+            
+        self.snake_body.clear()
+        self.create_snake()
+        self.head = self.snake_body[0]
+
+
     def add_segment(self, position):
         new_segment = turtle.Turtle(shape="square")
         new_segment.color("white")
